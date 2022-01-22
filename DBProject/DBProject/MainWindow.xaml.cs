@@ -25,6 +25,8 @@ namespace DBProject
         {
             InitializeComponent();
 
+            //Properties.Settings.Default.NalogSettings
+
             MainGrid.Children.Clear();
             ZahtjevForm form = new ZahtjevForm();
             MainGrid.Children.Add(form);       

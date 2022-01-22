@@ -8,6 +8,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="750">
     <Grid Background="White">
+        <Grid Background="#98C1D9" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0,20,60,0" Height="250" Width="250">
+            <Grid Background="White" Height="245" Width="245">
+                <StackPanel>
+                    <Label Content="Aleksandar" />
+                    <Label Content="065/716-881" />
+                    <Label Content="Samsung A6" />
+                    
+                    <StackPanel Background="{x:Null}" Margin="0,6,0,0">
+                        <RadioButton x:Name="RB_Primljen" Content="Primljen" IsChecked="True" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"/>
+                        <RadioButton x:Name="RB_NaCekanju" Content="Na čekanju" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"/>
+                        <RadioButton x:Name="RB_Zavrsen" Content="Završen" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.083,-0.733"/>
+                        <RadioButton x:Name="RB_Realizovan" Content="Realizovan" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"/>
+                        <RadioButton x:Name="RB_Naplacen" Content="Naplaćen" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"/>
+                    </StackPanel>
+                    <Button Content="Sačuvaj" Margin="10" Width="150" Background="#98C1D9" Foreground="#293241" BorderThickness="0"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
         <StackPanel HorizontalAlignment="Left" Margin="40">
             <TextBox x:Name="ImeBox" materialDesign:HintAssist.Hint="Korisničko ime" Width="300" FontSize="20" HorizontalAlignment="Left" />
             <TextBox x:Name="TelefonBox" materialDesign:HintAssist.Hint="Broj telefona" Width="300" FontSize="20" HorizontalAlignment="Left" Margin="0,20,0,0"/>
