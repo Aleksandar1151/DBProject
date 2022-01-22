@@ -24,5 +24,15 @@ namespace DBProject.Forms
         {
             InitializeComponent();
         }
+
+        private void Dodaj_Klik(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Azuriraj_Klik(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

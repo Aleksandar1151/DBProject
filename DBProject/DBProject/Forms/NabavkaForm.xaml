@@ -7,6 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="750">
     <Grid Background="White">
-            
+        <Label Content="ARTIKLI ZA NABAVKU" FontSize="20" Foreground="LightGray" FontWeight="Bold"/>
+
+
+
     </Grid>
 </UserControl>

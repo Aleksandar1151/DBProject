@@ -16,20 +16,23 @@ using System.Windows.Shapes;
 namespace DBProject.Forms
 {
     /// <summary>
-    /// Interaction logic for NaloziForm.xaml
+    /// Interaction logic for StornirajForm.xaml
     /// </summary>
-    public partial class NaloziForm : UserControl
+    public partial class StornirajForm : UserControl
     {
-        public NaloziForm()
+        public StornirajForm()
         {
             InitializeComponent();
         }
 
-        private void NoviNalog_Click(object sender, RoutedEventArgs e)
+        private void ListElement_Click(object sender, MouseButtonEventArgs e)
         {
 
         }
 
-        
+        private void Stampa_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿<UserControl x:Class="DBProject.Forms.NaloziForm"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -7,6 +8,55 @@
              mc:Ignorable="d" 
             d:DesignHeight="600" d:DesignWidth="750">
     <Grid Background="White">
-            
+        <StackPanel Orientation="Horizontal">
+            <Grid Width="300">
+                <StackPanel Margin="10">
+                    <Label Content="KREIRANJE NALOGA" FontSize="20" Foreground="LightGray" FontWeight="Bold"  />
+
+                    <StackPanel Orientation="Horizontal"  Margin="0,20,0,0" >
+                        <materialDesign:PackIcon Kind="Person" FontSize="25" Margin="0,0,10,0"  Foreground="Gray" Height="50" Width="30" />
+                        <TextBox x:Name="NazivBox" materialDesign:HintAssist.Hint="Naziv naloga" HorizontalAlignment="Left" FontSize="20" Margin="0,0,0,20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
+                    </StackPanel>
+
+
+                    <StackPanel Orientation="Horizontal"  Margin="0,0,0,0" >
+                        <materialDesign:PackIcon Kind="Key" FontSize="25" Margin="0,0,10,0"  Foreground="Gray" Height="50" Width="30" />
+                        <TextBox x:Name="LozinkaBox" materialDesign:HintAssist.Hint="Lozinka naloga" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+
+                    </StackPanel>
+
+
+
+                    <Button Width="200" FontSize="18" Height="50" Margin="20" Background="#3D5A80" Foreground="#E0FBFC" BorderThickness="0" Click="NoviNalog_Click"  >
+                        <StackPanel>
+                            <StackPanel>
+                                <TextBlock>KREIRAJ</TextBlock>                               
+                            </StackPanel>
+                        </StackPanel>
+                    </Button>
+                    <Rectangle Fill="#FF76746A" HorizontalAlignment="Left" Margin="0,0,0,0" Height="1"  VerticalAlignment="Top" Width="640"/>
+
+
+                    
+                </StackPanel>
+
+            </Grid>
+            <Rectangle Fill="LightGray" Width="2" Height="500" />
+            <Grid Width="450">
+                <ListView Margin="10" x:Name="NalogListView" FontSize="18" Background="White"  >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding id}" Header="Id" Width="200"/>
+                            <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding ime}" Header="Ime" Width="150"/>
+
+                        </GridView>
+                    </ListView.View>
+
+                </ListView>
+
+            </Grid>
+
+        </StackPanel>
+
     </Grid>
 </UserControl>

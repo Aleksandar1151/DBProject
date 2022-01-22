@@ -35,14 +35,15 @@ namespace DBProject
             var pressedButton = (Button)sender;
             int index = int.Parse(pressedButton.Uid);
 
-            string lightColor = "#EEE2DF";
-            string darkColor = "#B36A5E";
+            string lightColor = "#E0FBFC";
+            string darkColor = "#3D5A80";
 
             ChangeButtonColors(ButtonTab1,darkColor,lightColor);
             ChangeButtonColors(ButtonTab2,darkColor,lightColor);
             ChangeButtonColors(ButtonTab3,darkColor,lightColor);
             ChangeButtonColors(ButtonTab4,darkColor,lightColor);
             ChangeButtonColors(ButtonTab5,darkColor,lightColor);
+            ChangeButtonColors(ButtonTab6,darkColor,lightColor);
 
             MainGrid.Children.Clear();
 
@@ -68,11 +69,17 @@ namespace DBProject
                     }
                     case 4:
                     {
-                        NaloziForm form = new NaloziForm();
+                        StornirajForm form = new StornirajForm();
                         MainGrid.Children.Add(form);                        
                         break;
                     }
                     case 5:
+                    {
+                        NaloziForm form = new NaloziForm();
+                        MainGrid.Children.Add(form);                        
+                        break;
+                    }
+                    case 6:
                     {
                         NabavkaForm form = new NabavkaForm();
                         MainGrid.Children.Add(form);

@@ -30,3 +30,5 @@ C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\obj\Debug\Forms\Naba
 C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\obj\Debug\Forms\NaloziForm.baml
 C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\obj\Debug\Forms\RobaForm.baml
 C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\obj\Debug\Forms\ZahtjevForm.baml
+C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\obj\Debug\Forms\StornirajForm.g.cs
+C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\obj\Debug\Forms\StornirajForm.baml

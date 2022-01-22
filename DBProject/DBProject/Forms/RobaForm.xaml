@@ -11,10 +11,18 @@
         <StackPanel Orientation="Horizontal">
             <Grid Width="300">
                 <StackPanel Margin="10">
+                    <Label Content="DODAJ ARTIKAL" FontSize="20" FontWeight="Bold" Foreground="LightGray"/>
                     <TextBox x:Name="NazivBox" materialDesign:HintAssist.Hint="Naziv artikla" Width="300" FontSize="20" HorizontalAlignment="Left"  Margin="0,20,0,0" />
                     <TextBox x:Name="CijenaBox" materialDesign:HintAssist.Hint="Cijena artikla" Width="300" FontSize="20" HorizontalAlignment="Left" Margin="0,20,0,0" />
                     <TextBox x:Name="KolicinaBox" materialDesign:HintAssist.Hint="Količina artikla" Width="300" FontSize="20" HorizontalAlignment="Left" Margin="0,20,0,0" />
-                    <Button x:Name="DodajButton" Content="Dodaj" Background="#EE6C4D" Foreground="#E0FBFC" BorderThickness="0" FontSize="20" Height="40" Width="200" Margin="0,20,0,0"/>
+                    <Button x:Name="DodajButton" Content="Dodaj" Background="#3D5A80" Foreground="#E0FBFC" BorderThickness="0" FontSize="20" Height="50" Width="200" Margin="0,20,0,0" Click="Dodaj_Klik"/>
+
+                    <Rectangle Fill="LightGray" Height="2" Margin="10"/>
+                    <Label Content="AŽURIRAJ ARTIKAL" FontSize="20" FontWeight="Bold" Margin="0,30,0,0" Foreground="LightGray"/>
+                    <TextBox x:Name="AzurirajBox" materialDesign:HintAssist.Hint="Količina artikla" Width="300" FontSize="20" HorizontalAlignment="Left"  Margin="0,20,0,0" />
+                    <Button x:Name="AzurirajButton" Content="Ažuriraj" Background="#3D5A80" Foreground="#E0FBFC" BorderThickness="0" FontSize="20" Height="50" Width="200" Margin="0,20,0,0" Click="Azuriraj_Klik"/>
+                    
+                    
                 </StackPanel>
                 
             </Grid>
