@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DBProject.Forms;
 
 namespace DBProject
 {
@@ -23,6 +24,74 @@ namespace DBProject
         public MainWindow()
         {
             InitializeComponent();
+
+            MainGrid.Children.Clear();
+            ZahtjevForm form = new ZahtjevForm();
+            MainGrid.Children.Add(form);       
+        }
+
+        private void Tranzicija_Klik(object sender, RoutedEventArgs e)
+        {
+            var pressedButton = (Button)sender;
+            int index = int.Parse(pressedButton.Uid);
+
+            string lightColor = "#EEE2DF";
+            string darkColor = "#B36A5E";
+
+            ChangeButtonColors(ButtonTab1,darkColor,lightColor);
+            ChangeButtonColors(ButtonTab2,darkColor,lightColor);
+            ChangeButtonColors(ButtonTab3,darkColor,lightColor);
+            ChangeButtonColors(ButtonTab4,darkColor,lightColor);
+            ChangeButtonColors(ButtonTab5,darkColor,lightColor);
+
+            MainGrid.Children.Clear();
+
+             switch (index)
+            {
+                 case 1:
+                    {
+                        ZahtjevForm form = new ZahtjevForm();
+                        MainGrid.Children.Add(form);          
+                        break;
+                    }
+                    case 2:
+                    {
+                        MaterijalForm form = new MaterijalForm();
+                        MainGrid.Children.Add(form);                        
+                        break;
+                    }
+                    case 3:
+                    {                       
+                        RobaForm form = new RobaForm();
+                        MainGrid.Children.Add(form);                        
+                        break;
+                    }
+                    case 4:
+                    {
+                        NaloziForm form = new NaloziForm();
+                        MainGrid.Children.Add(form);                        
+                        break;
+                    }
+                    case 5:
+                    {
+                        NabavkaForm form = new NabavkaForm();
+                        MainGrid.Children.Add(form);
+                        break;
+                    }
+
+             }
+            ChangeButtonColors(pressedButton,lightColor,darkColor);
+
+
+        }
+
+        private void ChangeButtonColors(Button button, string foreColor, string backColor)
+        {
+            BrushConverter bc = new BrushConverter(); 
+            button.Background = (Brush)bc.ConvertFrom(backColor); 
+            button.Foreground = (Brush)bc.ConvertFrom(foreColor); 
+            
+
         }
     }
 }

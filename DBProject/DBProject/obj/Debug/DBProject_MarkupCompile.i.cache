@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Aleksandar\source\repos\DBProject\DBProject\obj\Debug\
+C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\obj\Debug\
 DBProject
 none
 false
 DEBUG;TRACE
-C:\Users\Aleksandar\source\repos\DBProject\DBProject\App.xaml
-11151548125
+C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\App.xaml
+61894471483
 
-61434861427
-13-1505183044
-MainWindow.xaml;
+11923162568
+15880510235
+Forms\MaterijalForm.xaml;Forms\NabavkaForm.xaml;Forms\NaloziForm.xaml;Forms\RobaForm.xaml;Forms\ZahtjevForm.xaml;MainWindow.xaml;
 
 True
 

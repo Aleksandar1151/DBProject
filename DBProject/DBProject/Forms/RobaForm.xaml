@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="DBProject.Forms.RobaForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DBProject.Forms"
+             mc:Ignorable="d" 
+            d:DesignHeight="600" d:DesignWidth="750">
+    <Grid Background="White">
+        <StackPanel Orientation="Horizontal">
+            <Grid Width="300">
+                <StackPanel Margin="10">
+                    <TextBox x:Name="NazivBox" materialDesign:HintAssist.Hint="Naziv artikla" Width="300" FontSize="20" HorizontalAlignment="Left"  Margin="0,20,0,0" />
+                    <TextBox x:Name="CijenaBox" materialDesign:HintAssist.Hint="Cijena artikla" Width="300" FontSize="20" HorizontalAlignment="Left" Margin="0,20,0,0" />
+                    <TextBox x:Name="KolicinaBox" materialDesign:HintAssist.Hint="Količina artikla" Width="300" FontSize="20" HorizontalAlignment="Left" Margin="0,20,0,0" />
+                    <Button x:Name="DodajButton" Content="Dodaj" Background="#EE6C4D" Foreground="#E0FBFC" BorderThickness="0" FontSize="20" Height="40" Width="200" Margin="0,20,0,0"/>
+                </StackPanel>
+                
+            </Grid>
+            <Rectangle Fill="LightGray" Width="2" Height="500" />
+            <Grid Width="450">
+                <ListView Margin="10">
+                    
+                </ListView>
+                
+            </Grid>
+            
+        </StackPanel>
+            
+    </Grid>
+</UserControl>
