@@ -46,8 +46,8 @@
                 <ListView Margin="10" x:Name="NalogListView" FontSize="18" Background="White"  >
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding id}" Header="Id" Width="200"/>
-                            <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding ime}" Header="Ime" Width="150"/>
+                            <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Id}" Header="Id" Width="200"/>
+                            <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding Ime}" Header="Ime" Width="150"/>
 
                         </GridView>
                     </ListView.View>

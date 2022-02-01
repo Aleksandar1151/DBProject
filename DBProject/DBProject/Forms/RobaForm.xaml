@@ -21,20 +21,53 @@
                     <Label Content="AŽURIRAJ ARTIKAL" FontSize="20" FontWeight="Bold" Margin="0,30,0,0" Foreground="LightGray"/>
                     <TextBox x:Name="AzurirajBox" materialDesign:HintAssist.Hint="Količina artikla" Width="300" FontSize="20" HorizontalAlignment="Left"  Margin="0,20,0,0" />
                     <Button x:Name="AzurirajButton" Content="Ažuriraj" Background="#3D5A80" Foreground="#E0FBFC" BorderThickness="0" FontSize="20" Height="50" Width="200" Margin="0,20,0,0" Click="Azuriraj_Klik"/>
-                    
-                    
+
+
                 </StackPanel>
-                
+
             </Grid>
             <Rectangle Fill="LightGray" Width="2" Height="500" />
-            <Grid Width="450">
-                <ListView Margin="10">
-                    
-                </ListView>
-                
-            </Grid>
+            <StackPanel>
+                <Grid Background="White" Width="450">
+                    <ListView Margin="10,10,0,0"  x:Name="RobaListView" Background="White"  FontSize="12"   PreviewMouseLeftButtonUp="ListElement_Click" Height="250" VerticalAlignment="Top"  >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Naziv}" Header="Naziv" Width="100"/>
+                                <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding Cijena}" Header="Cijena" Width="100"/>
+                                <GridViewColumn x:Name="Column3" DisplayMemberBinding="{Binding Kolicina}" Header="Količina" Width="100"/>
+                                <GridViewColumn x:Name="Column4" DisplayMemberBinding="{Binding Kod}" Header="Barkod" Width="100"/>
+
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+                </Grid>
+                <Grid Background="AliceBlue">
+                    <Label FontSize="20" FontWeight="Bold" Foreground="Gray" Height="50" VerticalAlignment="Top" >RAČUN</Label>
+                    <ListView Margin="10,10,0,0"  x:Name="RacunListView" Background="White"  FontSize="12"  Height="250" VerticalAlignment="Top"  >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn x:Name="Columnx1" DisplayMemberBinding="{Binding Naziv}" Header="Naziv" Width="150"/>
+                                <GridViewColumn x:Name="Columnx2" DisplayMemberBinding="{Binding Cijena}" Header="Cijena" Width="100"/>
+                                <GridViewColumn x:Name="Columnx3" DisplayMemberBinding="{Binding Kolicina}" Header="Količina" Width="100"/>
+                               
+
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+
+                </Grid>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="StampajButton" Content="ŠTAMPAJ" Background="#3D5A80" Foreground="#E0FBFC" BorderThickness="0" FontSize="20" Height="50" Width="200" Margin="20,0,0,0" Click="Dodaj_Klik"/>
+
+                    <Button x:Name="OtpisiButton" Content="OTPIŠI" Background="#E0FBFC" Foreground="#3D5A80" BorderThickness="0" FontSize="20" Height="50" Width="150" Margin="20,0,0,0" Click="Dodaj_Klik"/>
+
+                </StackPanel>
+            </StackPanel>
             
+
         </StackPanel>
-            
+
     </Grid>
 </UserControl>
