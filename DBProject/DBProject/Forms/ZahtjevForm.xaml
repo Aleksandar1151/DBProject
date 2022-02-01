@@ -8,23 +8,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="750">
     <Grid Background="White">
-        <Grid Background="#98C1D9" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0,20,60,0" Height="250" Width="250">
-            <Grid Background="White" Height="245" Width="245">
-                <StackPanel>
-                    <Label Content="Aleksandar" />
-                    <Label Content="065/716-881" />
-                    <Label Content="Samsung A6" />
-                    
-                    <StackPanel Background="{x:Null}" Margin="0,6,0,0">
-                        <RadioButton x:Name="RB_Primljen" Content="Primljen" IsChecked="True" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"/>
-                        <RadioButton x:Name="RB_NaCekanju" Content="Na čekanju" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"/>
-                        <RadioButton x:Name="RB_Zavrsen" Content="Završen" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.083,-0.733"/>
-                        <RadioButton x:Name="RB_Realizovan" Content="Realizovan" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"/>
-                        <RadioButton x:Name="RB_Naplacen" Content="Naplaćen" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"/>
-                    </StackPanel>
-                    <Button Content="Sačuvaj" Margin="10" Width="150" Background="#98C1D9" Foreground="#293241" BorderThickness="0"/>
-                </StackPanel>
-            </Grid>
+        <Grid Background="#e9f5db" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0,30,20,0" Height="250" Width="350">
+            <StackPanel Margin="10">
+                <TextBox x:Name="UplataBox" materialDesign:HintAssist.Hint="Za uplatu" Width="300" FontSize="20" HorizontalAlignment="Left" />
+                <TextBox x:Name="PlacenoBox" materialDesign:HintAssist.Hint="Plaćeno" Width="300" FontSize="20" HorizontalAlignment="Left" Margin="0,20,0,0"/>
+                <TextBox x:Name="OstaloBox" materialDesign:HintAssist.Hint="Ostalo" Width="300" FontSize="20" HorizontalAlignment="Left" Margin="0,20,0,0"/>
+            </StackPanel>
         </Grid>
         <StackPanel HorizontalAlignment="Left" Margin="40">
             <TextBox x:Name="ImeBox" materialDesign:HintAssist.Hint="Korisničko ime" Width="300" FontSize="20" HorizontalAlignment="Left" />
@@ -34,10 +23,20 @@
             <ComboBox Name="MaterijalCombo" materialDesign:HintAssist.Hint="Materijal" Width="300" FontSize="20" HorizontalAlignment="Left" Margin="0,20,0,0"/>
             <StackPanel Orientation="Horizontal">
                 <TextBox x:Name="NapomenaBox" materialDesign:HintAssist.Hint="Napomena" Width="400" FontSize="20" HorizontalAlignment="Left" Margin="0,20,0,0"/>
-                <Button x:Name="StampaButton" Content="Štampa" Background="#EE6C4D" Foreground="#E0FBFC" BorderThickness="0" FontSize="24" Height="50" Width="200" Margin="20,0,0,0"/>
+                <Button x:Name="StampaButton" Content="Štampa" Background="#EE6C4D" Foreground="#E0FBFC" BorderThickness="0" FontSize="24" Height="50" Width="200" Margin="20,0,0,0" Click="StampaButton_Click"/>
             </StackPanel>
             <ListView Height="200" Margin="5">
-                
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Korisnicko_ime}" Header="Korisnik" Width="150"/>
+                        <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding Broj_telefona}" Header="Telefon" Width="100"/>
+                        <GridViewColumn x:Name="Column3" DisplayMemberBinding="{Binding Model}" Header="Model" Width="120"/>
+                        <GridViewColumn x:Name="Column4" DisplayMemberBinding="{Binding Stanje}" Header="Stanje" Width="100"/>
+                        <GridViewColumn x:Name="Column5" DisplayMemberBinding="{Binding Datum}" Header="Datum" Width="100"/>
+
+                    </GridView>
+                </ListView.View>
+
             </ListView>
             
         </StackPanel>

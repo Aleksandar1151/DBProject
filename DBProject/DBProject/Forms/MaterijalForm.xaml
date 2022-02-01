@@ -28,7 +28,16 @@
             </Grid>
             <Rectangle Fill="LightGray" Width="2" Height="500" />
             <Grid Width="450">
-                <ListView Margin="10" PreviewMouseLeftButtonUp="ListElement_Click">
+                <ListView x:Name="MaterijalListView" Margin="10" PreviewMouseLeftButtonUp="ListElement_Click">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Naziv}" Header="Naziv" Width="120"/>
+                            <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding Cijena}" Header="Cijena" Width="100"/>
+                            <GridViewColumn x:Name="Column3" DisplayMemberBinding="{Binding Kolicina}" Header="Količina" Width="120"/>
+                            
+
+                        </GridView>
+                    </ListView.View>
 
                 </ListView>
 

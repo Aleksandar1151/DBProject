@@ -15,7 +15,7 @@ namespace DBProject.Data
         public int Nalog_id {get; set;}
         public Racun()
         {            
-            Datum = DateTime.Today.ToString("yyyy-mm-dd");;           
+            Datum = DateTime.Today.ToString("yyyy-mm-dd");           
         }
         public Racun(int id, string datum, int nalog)
         {

@@ -82,6 +82,9 @@ namespace DBProject.Forms
                     System.Windows.Controls.ListView list = (System.Windows.Controls.ListView)sender;
                     Artikal izabranArtikal = (Artikal)list.SelectedItem;
                     kliknutIdArtikal = izabranArtikal.Id;
+
+                    if(izabranArtikal.Kolicina == 0) return;
+
                     izabranArtikal.Kolicina-=1;
 
                     Stavka_artikal stavka = new Stavka_artikal(izabranArtikal.Id,izabranArtikal.Naziv,izabranArtikal.Cijena,1);

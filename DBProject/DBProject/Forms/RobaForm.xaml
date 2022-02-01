@@ -59,7 +59,7 @@
 
                 </Grid>
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="StampajButton" Content="ŠTAMPAJ" Background="#3D5A80" Foreground="#E0FBFC" BorderThickness="0" FontSize="20" Height="50" Width="200" Margin="20,0,0,0" Click="Stampaj_Click"/>
+                    <Button x:Name="StampajButton" Content="ŠTAMPAJ" Background="#EE6C4D" Foreground="#E0FBFC" BorderThickness="0" FontSize="20" Height="50" Width="200" Margin="20,0,0,0" Click="Stampaj_Click"/>
 
                     <Button x:Name="OtpisiButton" Content="OTPIŠI" Background="#E0FBFC" Foreground="#3D5A80" BorderThickness="0" FontSize="20" Height="50" Width="150" Margin="20,0,0,0" Click="Otpisi_Klik"/>
 

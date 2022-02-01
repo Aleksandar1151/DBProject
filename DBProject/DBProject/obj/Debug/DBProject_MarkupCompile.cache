@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\App.xaml
-81203012722
+9580361029
 
-23318821202
+241162437467
 34360196506
-Forms\MaterijalForm.xaml;Forms\NabavkaForm.xaml;Forms\NaloziForm.xaml;Forms\RobaForm.xaml;Forms\StornirajForm.xaml;Forms\ZahtjevForm.xaml;LoginWindow.xaml;MainWindow.xaml;
+Forms\MaterijalForm.xaml;Forms\NabavkaForm.xaml;Forms\NaloziForm.xaml;Forms\RobaForm.xaml;Forms\StornirajForm.xaml;Forms\ZahtjevForm.xaml;LoginWindow.xaml;MainWindow.xaml;StanjeWindow.xaml;
 
 False
 

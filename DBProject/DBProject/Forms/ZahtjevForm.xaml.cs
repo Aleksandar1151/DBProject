@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBProject.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,19 @@ namespace DBProject.Forms
         public ZahtjevForm()
         {
             InitializeComponent();
+        }
+
+        private void StampaButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                Barkod bk = new Barkod();
+                Zahtjev zahtjev = new Zahtjev(ImeBox.Text,TelefonBox.Text,ModelBox.Text,OpisBox.Text,NapomenaBox.Text,Convert.ToDouble(UplataBox.Text),Convert.ToDouble(PlacenoBox.Text),Convert.ToDouble(OstaloBox.Text),"primljen",DateTime.Today.ToString("yyyy-mm-dd"),bk.Kod,LoginWindow.IDNalog);
+
+               // zahtjev.Dodaj();
+            }
+            catch (Exception ex) { MessageBox.Show("Greška prilikom kreiranja zahtjeva. Provjerite format."); }
         }
     }
 }
