@@ -54,3 +54,5 @@ C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\bin\Debug\System.Buf
 C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\bin\Debug\System.Memory.xml
 C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\bin\Debug\System.Numerics.Vectors.xml
 C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\obj\Debug\LoginWindow.g.cs
+C:\ETF\Baze podataka\Projekat\DBProject\DBProject\DBProject\obj\Debug\LoginWindow.baml

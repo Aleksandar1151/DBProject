@@ -23,10 +23,13 @@ namespace DBProject.Forms
     public partial class RobaForm : UserControl
     {
         public static ObservableCollection<Artikal> KolekcijaArtikal { get;set;}
+        public static ObservableCollection<Stavka_artikal> RacunStavke {get;set;}
          int kliknutIdArtikal;
         public RobaForm()
         {
             InitializeComponent();
+            RacunStavke = new ObservableCollection<Stavka_artikal>();
+            RacunListView.ItemsSource = RacunStavke;
             RefreshTable();
         }
 
@@ -77,16 +80,87 @@ namespace DBProject.Forms
                 {
                     
                     System.Windows.Controls.ListView list = (System.Windows.Controls.ListView)sender;
-                  
-
                     Artikal izabranArtikal = (Artikal)list.SelectedItem;
                     kliknutIdArtikal = izabranArtikal.Id;
+                    izabranArtikal.Kolicina-=1;
 
+                    Stavka_artikal stavka = new Stavka_artikal(izabranArtikal.Id,izabranArtikal.Naziv,izabranArtikal.Cijena,1);
+                    //RacunStavke.Add(stavka);
+
+
+                     if(RacunStavke.Count == 0)
+                     {
+                         RacunStavke.Add(stavka);
+                     }
+                     else
+                     {
+                         int i = RacunStavke.ToList().FindIndex(itemX => itemX.Artikal_id == kliknutIdArtikal);
+
+                         if(i != -1)
+                         {
+                             RacunStavke[i].Kolicina += 1;
+                             
+                         }
+                         else
+                         {
+                             RacunStavke.Add(stavka);
+                         }
+
+                     }    
+
+
+                    RacunListView.ItemsSource = null;
+                    RacunListView.ItemsSource = RacunStavke;
+
+                    RobaListView.ItemsSource = null;
+                    RobaListView.ItemsSource = KolekcijaArtikal;
 
                 }
                 //(sender as ListView).SelectedItem = null;
              }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void Stampaj_Click(object sender, RoutedEventArgs e)
+        {
+            Racun racun = new Racun();
+            racun.Dodaj();            
+
+            List<Stavka_artikal> ListStavke = new List<Stavka_artikal>();
+
+            foreach(Stavka_artikal kliknuta_stavka in RacunStavke)
+            {
+                Stavka_artikal stavka = new Stavka_artikal(kliknuta_stavka.Artikal_id, racun.Id,kliknuta_stavka.Cijena,kliknuta_stavka.Kolicina);
+                ListStavke.Add(stavka);
+            }
+
+            Stavka_artikal.Sacuvaj(ListStavke);
+            OsvjeziRacun();
+            MessageBox.Show("Uspješno oštampan račun.");
+        }
+
+        private void Otpisi_Klik(object sender, RoutedEventArgs e)
+        {
+            List<Otpis> ListOtpis = new List<Otpis>();
+
+            foreach(Stavka_artikal kliknuta_stavka in RacunStavke)
+            { 
+                Otpis otpis = new Otpis(LoginWindow.IDNalog, kliknuta_stavka.Artikal_id, kliknuta_stavka.Kolicina);
+                ListOtpis.Add(otpis);
+            }
+
+            Otpis.Sacuvaj(ListOtpis);            
+           
+            OsvjeziRacun();
+            MessageBox.Show("Uspješno otpisan račun.");
+        }
+
+         private void OsvjeziRacun()
+        {
+            Artikal.Azuriraj(KolekcijaArtikal);
+            RacunStavke.Clear();
+            RacunListView.ItemsSource = null;
+            RacunListView.ItemsSource = RacunStavke;
         }
     }
 }
