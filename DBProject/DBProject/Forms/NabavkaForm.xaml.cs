@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DBProject.Data;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,13 @@ namespace DBProject.Forms
     /// </summary>
     public partial class NabavkaForm : UserControl
     {
+        public static ObservableCollection<Materijal> KolekcijaMaterijal { get;set;}
         public NabavkaForm()
         {
             InitializeComponent();
+
+            KolekcijaMaterijal = Materijal.UcitajNabavku();
+            NabavkaListView.ItemsSource = KolekcijaMaterijal;
         }
     }
 }

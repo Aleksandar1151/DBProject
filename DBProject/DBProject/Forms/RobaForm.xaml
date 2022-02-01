@@ -29,7 +29,7 @@
             <Rectangle Fill="LightGray" Width="2" Height="500" />
             <StackPanel>
                 <Grid Background="White" Width="450">
-                    <ListView Margin="10,10,0,0"  x:Name="RobaListView" Background="White"  FontSize="12"   PreviewMouseLeftButtonUp="ListElement_Click" Height="250" VerticalAlignment="Top"  >
+                    <ListView Margin="10,10,0,0"  x:Name="RobaListView" Background="White"  FontSize="12"   PreviewMouseLeftButtonUp="ListElement_Click" Height="250" VerticalAlignment="Top" PreviewMouseRightButtonUp="RightMouse_Click"  >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Naziv}" Header="Naziv" Width="100"/>

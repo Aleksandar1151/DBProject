@@ -109,5 +109,40 @@ namespace DBProject.Data
             catch (Exception ex) { MessageBox.Show("Greška prilikom mijenjanja materijala u bazi.\nRazlog: " + ex.Message); }
         }
 
+          public static ObservableCollection<Materijal> UcitajNabavku()
+        {
+            ObservableCollection<Materijal> kolekcija = new ObservableCollection<Materijal>();
+            Database.InitializeDB();
+
+            try
+            {
+                String query = "SELECT * FROM nabavkapogled;";
+                
+                MySqlCommand cmd = new MySqlCommand(query, Database.dbConn);
+                
+                
+                Database.dbConn.Open();
+                
+                MySqlDataReader reader = cmd.ExecuteReader();
+                
+
+                while (reader.Read())
+                {
+                    
+                    int idNalog = Convert.ToInt32(reader["id"]);
+                    string ime = reader["naziv"].ToString();
+                    double cijena = Convert.ToDouble(reader["cijena"]); 
+                    int kolicina = Convert.ToInt32(reader["kolicina"]);
+                    Materijal element = new Materijal(idNalog, ime, cijena, kolicina);
+                    kolekcija.Add(element);
+                   
+                }
+                Database.dbConn.Close();
+            }
+            catch (Exception ex) { MessageBox.Show("Greška prilikom preuzimanja naloga iz baze!\nRazlog: " + ex.Message); }
+
+            return kolekcija;
+        }
+
     }
 }

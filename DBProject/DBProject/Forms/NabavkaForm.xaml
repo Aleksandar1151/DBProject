@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="750">
     <Grid Background="White">
-        <Label Content="ARTIKLI ZA NABAVKU" FontSize="20" Foreground="LightGray" FontWeight="Bold"/>
-        <ListView x:Name="MaterijalListView" Margin="20" PreviewMouseLeftButtonUp="ListElement_Click">
+        <Label Content="MATERIJAL ZA NABAVKU" FontSize="20" Foreground="LightGray" FontWeight="Bold"/>
+        <ListView x:Name="NabavkaListView" Margin="20">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Naziv}" Header="Naziv" Width="200"/>
