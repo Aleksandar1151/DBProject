@@ -159,7 +159,7 @@ namespace DBProject.Forms
 
             Stavka_artikal.Sacuvaj(ListStavke);
             OsvjeziRacun();
-            MessageBox.Show("Uspješno oštampan račun.");
+            MessageBox.Show("Uspješno otštampan račun.");
         }
 
         private void Otpisi_Klik(object sender, RoutedEventArgs e)
