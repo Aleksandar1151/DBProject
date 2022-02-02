@@ -25,14 +25,14 @@
                 <TextBox x:Name="NapomenaBox" materialDesign:HintAssist.Hint="Napomena" Width="400" FontSize="20" HorizontalAlignment="Left" Margin="0,20,0,0"/>
                 <Button x:Name="StampaButton" Content="Štampa" Background="#EE6C4D" Foreground="#E0FBFC" BorderThickness="0" FontSize="24" Height="50" Width="200" Margin="20,0,0,0" Click="StampaButton_Click"/>
             </StackPanel>
-            <ListView Height="200" Margin="5">
+            <ListView x:Name="ZahtjevListView" Height="200" Margin="5" PreviewMouseLeftButtonUp="ListElement_Click">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Korisnicko_ime}" Header="Korisnik" Width="150"/>
-                        <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding Broj_telefona}" Header="Telefon" Width="100"/>
+                        <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding Broj_telefona}" Header="Telefon" Width="120"/>
                         <GridViewColumn x:Name="Column3" DisplayMemberBinding="{Binding Model}" Header="Model" Width="120"/>
-                        <GridViewColumn x:Name="Column4" DisplayMemberBinding="{Binding Stanje}" Header="Stanje" Width="100"/>
-                        <GridViewColumn x:Name="Column5" DisplayMemberBinding="{Binding Datum}" Header="Datum" Width="100"/>
+                        <GridViewColumn x:Name="Column4" DisplayMemberBinding="{Binding Stanje}" Header="Stanje" Width="160"/>
+                        
 
                     </GridView>
                 </ListView.View>

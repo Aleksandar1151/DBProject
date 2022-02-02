@@ -21,7 +21,7 @@
                 <RadioButton FontSize="18" x:Name="RB_Realizovan" Content="Realizovan" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"/>
                 <RadioButton FontSize="18" x:Name="RB_Naplacen" Content="Naplaćen" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top"/>
             </StackPanel>
-            <Button Content="Sačuvaj" Margin="10" Width="200" FontSize="18" Background="#98C1D9" Foreground="#293241" BorderThickness="0"/>
+            <Button Content="Sačuvaj" Margin="10" Width="200" Height="40" FontSize="18" Background="#98C1D9" Foreground="#293241" BorderThickness="0" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>

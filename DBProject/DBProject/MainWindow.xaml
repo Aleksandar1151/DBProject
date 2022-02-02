@@ -14,7 +14,7 @@
                 <Button Uid="3" x:Name="ButtonTab3" Background="#E0FBFC" Foreground="#3D5A80" BorderThickness="0" Content="ROBA " FontSize="22" Height="70" Margin="0,0,0,10" Click="Tranzicija_Klik"></Button>
                 <Button Uid="4" x:Name="ButtonTab4" Background="#E0FBFC" Foreground="#3D5A80" BorderThickness="0" Content="STORNIRAJ" FontSize="22" Height="70" Margin="0,0,0,10" Click="Tranzicija_Klik"></Button>
                 <Button Uid="5" x:Name="ButtonTab5" Background="#E0FBFC" Foreground="#3D5A80" BorderThickness="0" Content="NALOZI" FontSize="22" Height="70" Margin="0,0,0,10" Click="Tranzicija_Klik"></Button>
-                <Button Uid="6" x:Name="ButtonTab6" Background="#E0FBFC" Foreground="#3D5A80" BorderThickness="0" Content="ZA NABAVKU" FontSize="22" Height="70" Margin="0,0,0,10" Click="Tranzicija_Klik"></Button>
+                <Button Uid="6" x:Name="ButtonTab6" Background="#E0FBFC" Foreground="#3D5A80" BorderThickness="0" Content="NABAVKA/NAPLAĆENI" FontSize="18" Height="70" Margin="0,0,0,10" Click="Tranzicija_Klik"></Button>
             </StackPanel>
             
         </Grid>

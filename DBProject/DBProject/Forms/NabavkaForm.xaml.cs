@@ -23,12 +23,17 @@ namespace DBProject.Forms
     public partial class NabavkaForm : UserControl
     {
         public static ObservableCollection<Materijal> KolekcijaMaterijal { get;set;}
+        public static ObservableCollection<Zahtjev> KolekcijaZahtjev { get;set;}
         public NabavkaForm()
         {
             InitializeComponent();
 
             KolekcijaMaterijal = Materijal.UcitajNabavku();
             NabavkaListView.ItemsSource = KolekcijaMaterijal;
+
+
+            KolekcijaZahtjev = Zahtjev.UcitajNaplacene();
+            NaplacenListView.ItemsSource = KolekcijaZahtjev;
         }
     }
 }

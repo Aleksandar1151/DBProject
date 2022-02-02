@@ -7,19 +7,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="750">
     <Grid Background="White">
-        <Label Content="MATERIJAL ZA NABAVKU" FontSize="20" Foreground="LightGray" FontWeight="Bold"/>
-        <ListView x:Name="NabavkaListView" Margin="20">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Naziv}" Header="Naziv" Width="200"/>
-                    <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding Cijena}" Header="Cijena" Width="200"/>
-                    <GridViewColumn x:Name="Column3" DisplayMemberBinding="{Binding Kolicina}" Header="Količina" Width="120"/>
+        <StackPanel>
+            <Label Content="MATERIJAL ZA NABAVKU" FontSize="20" Foreground="LightGray" FontWeight="Bold"/>
+            <ListView x:Name="NabavkaListView" Height="200" Margin="20">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Naziv}" Header="Naziv" Width="200"/>
+                        <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding Cijena}" Header="Cijena" Width="200"/>
+                        <GridViewColumn x:Name="Column3" DisplayMemberBinding="{Binding Kolicina}" Header="Količina" Width="120"/>
 
 
-                </GridView>
-            </ListView.View>
+                    </GridView>
+                </ListView.View>
 
-        </ListView>
+            </ListView>
+
+            <Label Content="NAPLAĆENI ZAHTJEVI" FontSize="20" Foreground="LightGray" FontWeight="Bold"/>
+            <ListView x:Name="NaplacenListView" Margin="20">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn x:Name="ColumnX1" DisplayMemberBinding="{Binding Korisnicko_ime}" Header="Korisnik" Width="200"/>
+                        <GridViewColumn x:Name="ColumnX2" DisplayMemberBinding="{Binding Broj_telefona}" Header="Telefon" Width="120"/>
+                        <GridViewColumn x:Name="ColumnX3" DisplayMemberBinding="{Binding Model}" Header="Model" Width="120"/>
+                        <GridViewColumn x:Name="ColumnX4" DisplayMemberBinding="{Binding Stanje}" Header="Stanje" Width="160"/>
+
+
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+
+        </StackPanel>
+      
 
 
 
