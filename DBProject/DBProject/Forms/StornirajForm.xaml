@@ -11,16 +11,16 @@
             <StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,20,10,20">
                     <Label Content="RAČUN ID:" FontSize="18" Foreground="Gray" FontWeight="Bold"/>
-                    <TextBox Width="100"/>
-                    <Button Content="Pretraži" Width="100" Background="#3D5A80" Foreground="#E0FBFC" BorderThickness="0" Margin="20,0,0,0"/>
+                    <TextBox Name="RacunBox" Width="100"/>
+                    <Button Content="Pretraži" Width="100" Background="#3D5A80" Foreground="#E0FBFC" BorderThickness="0" Margin="20,0,0,0" Click="Button_Click"/>
                 </StackPanel>
-                <ListView x:Name="NalogListView" Margin="10" Height="500" Background="White" PreviewMouseLeftButtonUp="ListElement_Click"  >
+                <ListView x:Name="RacunListView" Margin="10" Height="500" Background="White" PreviewMouseLeftButtonUp="ListElement_Click"  >
 
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding naziv}" Header="Naziv" Width="100"/>
-                            <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding cijena}" Header="Cijena" Width="120"/>
-                            <GridViewColumn x:Name="Column3" DisplayMemberBinding="{Binding kolicina}" Header="Količina" Width="140"/>
+                            <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Naziv}" Header="Naziv" Width="140"/>
+                            <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding Cijena}" Header="Cijena" Width="120"/>
+                            <GridViewColumn x:Name="Column3" DisplayMemberBinding="{Binding Kolicina}" Header="Količina" Width="140"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -34,9 +34,9 @@
                 <ListView x:Name="StorniranListView" HorizontalAlignment="Center"   Margin="10" Height="400" >
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn x:Name="Column4" DisplayMemberBinding="{Binding naziv}" Header="Naziv" Width="100"/>
-                            <GridViewColumn x:Name="Column5" DisplayMemberBinding="{Binding cijena}" Header="Cijena" Width="120"/>
-                            <GridViewColumn x:Name="Column6" DisplayMemberBinding="{Binding kolicina}" Header="Količina" Width="150"/>
+                            <GridViewColumn x:Name="Column4" DisplayMemberBinding="{Binding Naziv}" Header="Naziv" Width="100"/>
+                            <GridViewColumn x:Name="Column5" DisplayMemberBinding="{Binding Cijena}" Header="Cijena" Width="120"/>
+                            <GridViewColumn x:Name="Column6" DisplayMemberBinding="{Binding Kolicina}" Header="Količina" Width="150"/>
 
 
                         </GridView>

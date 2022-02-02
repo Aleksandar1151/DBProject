@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,28 @@ namespace DBProject.Data
             Kolicina = kolicina;
         }
 
+        public Stavka_artikal(Stavka_artikal x)
+        {
+            Racun_id = x.Racun_id;
+            Artikal_id = x.Artikal_id;
+            Naziv = x.Naziv;
+            Kolicina = x.Kolicina;
+            Cijena = x.Cijena;
+            
+        }
+
+           public Stavka_artikal(int artikal, int racun,  string naziv, double cijena, int kolicina)
+        {
+            Artikal_id = artikal; 
+            Racun_id = racun;
+            Naziv = naziv;
+
+            Cijena = cijena;
+            Kolicina = kolicina;
+        }
+
+
+
          public static void Sacuvaj(List<Stavka_artikal> ListStavka)
         {
             Database.InitializeDB();
@@ -59,6 +82,49 @@ namespace DBProject.Data
                            
             }
             catch (Exception ex) { MessageBox.Show("Greška prilikom unosa stavke artikla u bazu.\nRazlog: " + ex.Message); }
+        }
+
+         public static ObservableCollection<Stavka_artikal> UcitajStavkeRacuna(int id)
+        {
+            ObservableCollection<Stavka_artikal> KolekcijaStavka = new ObservableCollection<Stavka_artikal>();
+            ObservableCollection<Artikal> KolekcijaArtikal = new ObservableCollection<Artikal>();
+            KolekcijaArtikal = Artikal.Ucitaj();
+            Database.InitializeDB();
+                
+            try
+            {
+                String query = string.Format("SELECT * FROM stavka_artikal WHERE `racun_id` = {0}" , id);
+                
+                MySqlCommand cmd = new MySqlCommand(query, Database.dbConn);                
+                
+                Database.dbConn.Open();
+                
+                MySqlDataReader reader = cmd.ExecuteReader();                
+
+                while (reader.Read())
+                {
+                    
+                    int idRacun = Convert.ToInt32(reader["racun_id"]);
+                    int idArtikal = Convert.ToInt32(reader["artikal_id"]);
+                    
+                    int kolicina = Convert.ToInt32(reader["kolicina"]);
+                    double cijena = Convert.ToDouble(reader["cijena"]);
+                    
+
+                    int index = KolekcijaArtikal.ToList().FindIndex(num => num.Id == idArtikal);
+                    
+
+                    Stavka_artikal element = new Stavka_artikal(idArtikal, idRacun, KolekcijaArtikal[index].Naziv,cijena,kolicina);
+
+                    KolekcijaStavka.Add(element);
+                   
+                }
+                Database.dbConn.Close();
+            }
+            catch (Exception ex) { MessageBox.Show("Greška prilikom preuzimanja stavke iz baze!\nRazlog: " + ex.Message); }
+
+
+             return KolekcijaStavka;
         }
     }
 }

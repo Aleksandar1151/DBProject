@@ -49,16 +49,28 @@ namespace DBProject.Forms
         private void Azuriraj_Klik(object sender, RoutedEventArgs e)
         {
 
+
+            
+
             try
             {
-                 int index = KolekcijaArtikal.ToList().FindIndex(num => num.Id == kliknutIdArtikal);
-                  KolekcijaArtikal[index].Kolicina = Convert.ToInt32(AzurirajBox.Text); 
+                if(Convert.ToInt32(AzurirajBox.Text)>0)
+                {
+                    int index = KolekcijaArtikal.ToList().FindIndex(num => num.Id == kliknutIdArtikal);
+                    KolekcijaArtikal[index].Kolicina = Convert.ToInt32(AzurirajBox.Text); 
     
-                 Artikal.Azuriraj(KolekcijaArtikal);
+                    Artikal.Azuriraj(KolekcijaArtikal);
 
-                  RefreshTable();
+                    RefreshTable();
 
-                AzurirajBox.Text = null;
+                    AzurirajBox.Text = null;
+                }
+                else
+                {
+                    MessageBox.Show("Količina ne može biti negativna.");
+                }
+
+                 
                 
             }catch{}
                
